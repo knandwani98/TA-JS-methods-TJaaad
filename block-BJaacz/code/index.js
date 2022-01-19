@@ -29,15 +29,15 @@ function addFive (c) {
 */
 let nums = [1, 2, 3, 4, 5, 6];
 
-function addTwoToArray (arr,cb) {
+function addTwoToArray (arr) {
   let newArr = [];
   for (let number of arr) {
-    newArr.push (cb(number));
+    newArr.push (addTwo(number));
   }
   return newArr;
 }
 
-console.log(addTwoToArray (nums, addTwo));
+console.log(addTwoToArray (nums));
 
 /*
   Create a function named addThreeToArray which accepts:
@@ -48,12 +48,12 @@ console.log(addTwoToArray (nums, addTwo));
 function addThreeToArray (arr,cb) {
   let newArr = [];
   for (let number of arr) {
-    newArr.push (cb(number));
+    newArr.push (addThree(number));
   }
   return newArr;
 }
 
-console.log(addThreeToArray (nums, addThree));
+console.log(addThreeToArray (nums));
 
 
 
@@ -63,15 +63,15 @@ console.log(addThreeToArray (nums, addThree));
     - aeturns a new array where 2 is added to each element
     - while doing so use the funciton addThree
 */
-function addFiveToArray (arr,cb) {
+function addFiveToArray (arr) {
   let newArr = [];
   for (let number of arr) {
-    newArr.push (cb(number));
+    newArr.push (addFive(number));
   }
   return newArr;
 }
 
-console.log(addFiveToArray (nums, addFive));
+console.log(addFiveToArray (nums));
 
 /*
 In above function addTwoToArray, addThreeToArray, addFiveToArray we are repeating the code, let's fix this.
@@ -138,9 +138,10 @@ console.log (first(first));
   - Also write the required code to call the function
 */
 function second () {
-  return function third (num) {
+   function third (num) {
    return num + 1;
   }
+  return third;
 }
 
 console.log(second(1));
@@ -193,11 +194,7 @@ const grades = [
     console.log(isAdult(people[2])); // true
 */
 function isAdult(obj) {
-  if ((obj).age > 18) {
-    return true;
-  } else {
-    return false;
-  }
+  return obj.age > 18;
 }
 
 console.log(isAdult(people[0]), `IsAdult`); // false
@@ -217,12 +214,7 @@ console.log(isAdult(people[2]), `IsAdult`); // true
 */
 
 function isMale (obj) {
-  if (obj.sex == 'M') {
-    return true;
-  }
-  else {
-    return false;
-  }
+  return obj.sex === 'M';
 }
 console.log(isMale(grades[0]), `IsMale`); // true
 console.log(isMale(grades[1]), `IsMale`); // false
@@ -240,13 +232,9 @@ console.log(isMale(grades[2]), `IsMale`); // true
     console.log(isFemale(grade[2])); // false
 */
 function isFemale (obj) {
-  if (obj.sex == 'F') {
-    return true;
-  }
-  else {
-    return false;
-  }
+  return obj.sex === 'F';
 }
+
 console.log(isFemale(grades[0]), `IsFemale`); // false
 console.log(isFemale(grades[1]), `IsFemale`); // true
 console.log(isFemale(grades[2]), `IsFemale`); // false
@@ -264,7 +252,7 @@ console.log(isFemale(grades[2]), `IsFemale`); // false
 */
 
 function isGradeA (obj) {
-  return obj.grade > 12 ? true : false;
+  return obj.grade > 12;
 }
 
 console.log(isGradeA(grades[0]), `Grade A`); // false
@@ -283,7 +271,7 @@ console.log(isGradeA(grades[2]), `Grade A`); // true
     console.log(isGradeB(grade[2])); // false
 */
 function isGradeB (obj) {
-  return (obj.grade > 8 && obj.grade <= 12) ? true : false;
+  return obj.grade > 8 && obj.grade <= 12;
 }
 
 console.log(isGradeB(grades[0]), `Grade B`); // true
@@ -301,7 +289,7 @@ console.log(isGradeB(grades[2]), `Grade B`); // false
     console.log(isGradeC(grades[2])); // false
 */
 function isGradeC (obj){
-  return (obj.grade > 0 && obj.grade <= 8) ? true : false;
+  return obj.grade > 0 && obj.grade <= 8;
 }
 
 console.log(isGradeC(grades[0]), `Grade C`); // true
@@ -327,9 +315,9 @@ console.log (people[0].age, ` - Test`);
 */
 function filterAdult (arr) {
   let newArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (isAdult(arr[i])) {
-      newArr.push (arr[i]);
+  for (let i of arr) {
+    if (isAdult(i)) {
+      newArr.push (i);
     }
   }
   return newArr;
