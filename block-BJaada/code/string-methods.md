@@ -32,12 +32,71 @@ Example:
    - `charAt` accepts a index (number data type) and return the character on that index in the string.
 
 2. `toUpperCase`
+   - Parameter: is null. It is called without value .
+   - Return: It returns the Lower Case data to Upper Case. (String Data Type)
+   - Example: 
+   ```js
+   let name = "Kushal Nandwani";
+   name.toUpperCase (); //'KUSHAL NANDWANI'
+   let error = "There is no place like 127.0.0.1";
+   error.toUpperCase (); // 'THERE IS NO PLACE LIKE 127.0.0.1'
+   ```
+
 3. `toLowerCase`
+   - Parameter : any parameters doesn't work, Null;
+   - Return : It returns all value in lower case (String Data Type);
+    - Example :
+    ```js
+       let name = "KUSHAL NANDWANI";
+   name.toLowerCase (); // 'Kushal Nandwani'
+   let error = "THERE IS NO PLACE LIKE 127.0.0.1";
+   error.toLowerCase (); // 'There is no place like 127.0.0.1'
+    ```
 4. `trim`
+ - Parameter :  any parameters doesn't work, Null.
+ - Return : It removes the extra spaces from start and end. (Strring & Number Data Type)
+ - Example : 
+ ```js
+ let name = "      Kushal Nandwani      "
+ name.trim(); // "Kushal Nandwani"
+ let error = "         THERE IS NO PLACE LIKE 127.0.0.1                                                                 ";
+error.trim() // "THERE IS NO PLACE LIKE 127.0.0.1"
+ ```
 5. `trimEnd`
+ - Parameter :  any parameters doesn't work, Null.
+ - Return : It only removes the extra spaces from end. (Strring & Number Data Type)
+ - Example : 
+ ```js
+ let name = "Kushal Nandwani      "
+ name.trim(); // "Kushal Nandwani"
+ let error = "   THERE IS NO PLACE LIKE 127.0.0.1                                                                 ";
+error.trim() // "   THERE IS NO PLACE LIKE 127.0.0.1"
+ ```
 6. `trimStart`
+ - Parameter :  any parameters doesn't work, Null.
+ - Return : It removes the extra spaces only from start. (Strring & Number Data Type)
+ - Example : 
+ ```js
+ let name = "      Kushal Nandwani"
+ name.trim(); // "Kushal Nandwani"
+ let error = "         THERE IS NO PLACE LIKE 127.0.0.1      ";
+error.trim() // "THERE IS NO PLACE LIKE 127.0.0.1     "
+ ```
+
 7. `concat`
+parameter : add many values you want by just using conjuction "," (val1, val2, .......val10);
+return : It will concatinate the every values into new string. (Number and String Data Type)
+example: 
+```js
+let firstName = "Kushal", lastName = "Nandwani", midName = " ";
+firstName.concat(midName, lastName) // "Kushal Nandwani"
+
+ let error = "THERE IS NO PLACE LIKE 127.0.0.1";
+
+firstName.concat(" says ", error);
+```
 8. `endsWith`
+
 9. `includes`
 10. `indexOf`
 11. `lastIndexOf`
