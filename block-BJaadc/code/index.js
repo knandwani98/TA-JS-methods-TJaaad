@@ -13,7 +13,7 @@ console.log (`The first character of ${message} is ${message.charAt(message.leng
 console.log (message.indexOf("you"));
 
 // Log the index of word "still" in message
-console.log (message.indexOf("still"));
+console.log (message.indexOf("still")); 
 
 // Log the index of word "answers" in message
 console.log (message.indexOf("answers"));
@@ -66,8 +66,10 @@ for (let char of message) {
 }
 
 // Split all the words in message (split by " " space) and store it in a variable messageArray
-messageArray = message.split(" ");
+let messageArray = message.split(" ");
 
 // Log all the words of messageArray
-console.log (messageArray);
+for (let word of messageArray) {
+    console.log (word);
+}
 
