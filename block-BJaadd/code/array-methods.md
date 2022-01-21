@@ -34,7 +34,28 @@ Example:
    - No it does not mutate the original array
 
 2. `join`
+ - Parameter : It takes the parameter and act as a seperator and convert a array and convert it into a single string.
+      - By default its parameter is ",".
+      - It will always takes value as a string;
+  - Example : 
+  ```js 
+   let numbers = [1, 2, 3];
+   numbers.join (); // "1,2,3"
+   numbers.join ("-"); // "1-2-3"
+  ```
 3. `flat`
+ - Parameter : It removes the nesting from an array and convert it into new array;
+  - It takes only first level on default;
+  - It accepts the number value to drop till the particular nesting level(depth);
+  - Infinity value can be used to determine and remove nesting from the complete array;
+  - Example :
+  ```js
+   let numbers = [1, [2, [3, 4], 5,] 6];
+
+   numbers.flat(); // [1, 2, [3, 4], 5, 6];
+   numbers.flat();
+
+  ```
 4. `push`
 5. `indexOf`
 6. `lastIndexOf`
