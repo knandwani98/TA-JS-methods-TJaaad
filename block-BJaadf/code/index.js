@@ -15,7 +15,7 @@ delete fruits[0];
 // Log the element on index 0 and 1
 console.log (fruits[0], fruits[1]);
 
-// If the element at 0 index is undefined and index 1 is 'Banana' shift all the values to one lower index (use shift method).
+// If the element at 0 index is undefined and index 1 is 'Orange' shift all the values to one lower index (use shift method).
 console.log(fruits);
 fruits.shift();
 
@@ -33,7 +33,7 @@ fruits[1] = "Pears";
 
 // Add the 'Kiwi' and 'Lemon' to the index 1 and 2 and shift the other element to next index (use splice to add element)
 console.log(fruits);
-fruits.splice(1,0,"Kiwi", "Lemon");
+fruits.splice(1, 0, "Kiwi", "Lemon");
 
 // Remove (slice) all the element from index 5
 fruits.slice(5);
@@ -133,7 +133,7 @@ let evenNumbers = numbersThree.filter(evenNum);
 console.log (evenNumbers);
 
 // Find the index of 10 in numbersThree array
-console.log(numbersThree.indexOf(10));
+console.log(numbersThree.find(10));
 
 // Reverse the values of numbersThree array
 console.log(numbersThree.reverse());
@@ -144,7 +144,7 @@ console.log(numbersTwo.reverse());
 
 
 // Join all fruits with '-', convert to uppercase and log it
-console.log(allFruits.join(" - "));
+console.log(allFruits.join(" - ").toUpperCase());
 
 // Join all fruits with '&', convert to lowercase and log it
-console.log(allFruits.join(" & "));
+console.log(allFruits.join(" & ").toLowerCase());
