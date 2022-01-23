@@ -80,12 +80,12 @@ console.log(quote.indexOf("o", 2)); // 9
 /*
 13. Find the last index of letter "a" in quote.
 */
-quote.lastIndexOf("a"); // 48
+let lastIndexOfA = quote.lastIndexOf("a"); // 48
 
 /*
 14. Find the second last index of letter "a" in quote.
 */
-quote.lastIndexOf("a", );
+quote.lastIndexOf("a", lastIndexOfA - 1); 
 
 /*
 15. Make the quote 70 character long. If it has less characters add rest as .......
