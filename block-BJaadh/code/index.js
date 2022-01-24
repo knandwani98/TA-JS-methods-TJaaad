@@ -30,14 +30,14 @@ strings.join(" ");
 strings.shift();
 
 // - Find all the words that contain 'is' use string method 'includes'
-strings.some(function (element) {
+strings.filter(function (element) {
   if(element.includes("is")) {
     console.log(element);
   }
 })
 
 // - Find all the words that contain 'is' use string method 'indexOf'
-strings.some(function (element) {
+strings.filter(function (element) {
   if(element.indexOf("is") !== -1) {
     console.log(element);
   }
@@ -100,19 +100,12 @@ console.log(strings.slice(2, 4));
 let  = numbers.map((num) => {
   if (num === 12) {
     return 1221;
-  } else {
-    return num;
-  }
-})
-
-let eighteen = numbers.map((num) => {
-  if (num === 18) {
+  } else if (num === 18) {
     return 1881;
   } else {
     return num;
   }
 })
-
 
 // - Replace words in strings array with the length of the word
 let stringLength = strings.map (length);
@@ -122,7 +115,7 @@ function length (word) {
 
 // - Find the sum of the length of words using above question
 let sumLength = stringLength.reduce((acc, num) => {
-  return acc + num;
+  return acc += num;
 }, 0);
 
 
