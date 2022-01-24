@@ -25,9 +25,11 @@ words.map((word) => {
 })
 
 // - Create a new array that only contains word with atleast one vowel.
-let atLeastVowel = words.some((word) => {
+let atLeastVowel = words.filter(checkVowel);
+
+function checkVowel (word) {
   return word.includes("a") || word.includes("e") || word.includes("i") || word.includes("o") || word.includes("u");
-})
+}
 
 // - Find the index of the word "rhythm"
 let isRhythm = words.findIndex((word) => {
@@ -35,23 +37,18 @@ let isRhythm = words.findIndex((word) => {
 })
 
 // - Create a new array that contians words not starting with vowel.
-let notStartWithVowel = words.filter((word) => {
-  return word.startsWith("a") || word.startsWith ("e") || word.startsWith("i") || word.startsWith("o") || word.startsWith("u");
-})
+let notStartWithVowel = words.filter((word) => !checkVowel(word[0]));
 
 // - Create a new array that contianse words not ending with vowel
-let notEndsWithVowel = words.filter((word) => {
-  return word.endsWith("a") || word.endsWith ("e") || word.endsWith("i") || word.endsWith("o") || word.endsWith("u")
-})
+let notEndsWithVowel = words.filter((word) => !checkVowel(word[word.length - 1]));
 
 let numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 // - Create a sumArray function that takes an array of number as a parameter, and calculate the sum of all its numbers
 function sumArray (arr) {
-  let sum = arr.reduce((acc, num) => {
+  return arr.reduce((acc, num) => {
   return acc + num;
   }, 0);
-  return sum;
 }
 
 // - Make a new array that contains number multiplied by 3 like [6, 18, 27 ...]
@@ -71,7 +68,7 @@ let oddNumbers = numbers.filter((num) => {
 
 // - Create a new array that should have true for even number and false for odd numbers.
 let newArray = numbers.map((num) => {
-  return num % 2 === 0 ? true : false;
+  return num % 2 === 0;
 })
 
 
