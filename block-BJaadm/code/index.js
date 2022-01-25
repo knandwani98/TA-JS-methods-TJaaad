@@ -48,16 +48,13 @@ console.log (persons.filter((arr) => arr.name.toUpperCase().startsWith("A") || a
 console.log (peopleGrade.filter((w) => w % 2 === 0));
 
 // Find the first name that starts with 'J' in persons array and log the object
-let nameFromJ = persons.filter((w) => w.name.toUpperCase().startsWith("J"));
-console.log(nameFromJ[0]);
+console.log(persons.find((w) => w.name.toUpperCase().startsWith("J")));
 
 // Find the first name that starts with 'P' in persons array and log the object
-let nameFromP = persons.filter((w) => w.name.toUpperCase().startsWith("P"));
-console.log(nameFromP[0]);
+console.log(persons.find((w) => w.name.toUpperCase().startsWith("P")));
 
 // Find the first name that starts with 'J', grade is greater than 10 and is a female
-let grade10 = persons.filter((w) => w.name.toUpperCase().startsWith("J") && w.sex === "F" && w.grade > 10);
-console.log (grade10[0]);
+console.log(persons.find((w) => w.name.toUpperCase().startsWith("J") && w.grade > 10 && w.sex === "F"));
 
 
 // Filter all the female from persons array and store in femalePersons array
@@ -70,7 +67,7 @@ let allMales = persons.filter((word) => word.sex === "M")
 let gradeTotal = peopleGrade.reduce((acc, num) => acc + num, 0);
 
 // Find the average grade
-let averageGrades = peopleGrade.reduce((acc, num) => acc + num / peopleGrade.length, 0);
+let averageGrade = gradeTotal / peopleGrade.length;
 
 // Find the average grade of male
 let averageGradesOfMale = allMales.map((person) => person.grade).reduce((acc, num) => acc + num / allMales.length, 0);
