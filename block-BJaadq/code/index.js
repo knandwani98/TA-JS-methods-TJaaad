@@ -3,39 +3,77 @@
 function countAllPeople() {
   // your code goes here
   let sum = 0;
-  for (let house of got.houses){
+  got.houses.forEach(house => {
     sum += house.people.length;
-  }
-  return sum;
+  }); return sum;
 }
 
 function peopleByHouses() {
   // your code goes here
-  
+  let sum = {};
+  got.houses.forEach(house => {
+    sum[house.name] = house.people.length;
+  }); return sum;
 }
 
 function everyone() {
   // your code goes here
+  let sum = [];
+  got.houses.forEach((house) => house.people.map((person) => sum.push(person.name)));
+  return sum;
 }
 
 function nameWithS() {
   // your code goes here
+  let sum = [];
+  got.houses.forEach((house) => house.people.filter((person) => {
+    if (person.name.includes('s') || person.name.includes('S')){
+      sum.push(person.name);
+    }
+  }))
+  return sum;
 }
 
 function nameWithA() {
   // your code goes here
+  let sum = [];
+  got.houses.forEach((house) => house.people.filter((person) => {
+    if (person.name.includes('a') || person.name.includes('A')){
+      sum.push(person.name);
+    }
+  }))
+  return sum;
 }
 
 function surnameWithS() {
   // your code goes here
+  let sum = [];
+  got.houses.forEach((house) => house.people.filter((person) => {
+    if (person.name.split(" ")[1].startsWith('S')){
+      sum.push(person.name);
+    }
+  }))
+  return sum;
 }
 
 function surnameWithA() {
   // your code goes here
+  let sum = [];
+  got.houses.forEach((house) => house.people.filter((person) => {
+    if (person.name.split(" ")[1].startsWith('S')){
+      sum.push(person.name);
+    }
+  }))
+  return sum;
 }
 
 function peopleNameOfAllHouses() {
   // your code goes here
+  let sum = {};
+  got.houses.forEach(house => {
+    sum[house.name] = house.people.map((person) => person.name);
+  });
+  return sum;
 }
 
 // Testing your result after writing your function
