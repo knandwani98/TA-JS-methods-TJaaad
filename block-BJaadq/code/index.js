@@ -2,10 +2,16 @@
 
 function countAllPeople() {
   // your code goes here
+  let sum = 0;
+  for (let house of got.houses){
+    sum += house.people.length;
+  }
+  return sum;
 }
 
 function peopleByHouses() {
   // your code goes here
+  
 }
 
 function everyone() {
