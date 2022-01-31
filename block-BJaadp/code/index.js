@@ -128,7 +128,7 @@ Create these functions which accepts a number value and returns a number value:
 */
 let increment = (value) => value + 1;
 let double = (value) => value * 2;
-let decrement = (value) => value - 2;
+let decrement = (value) => value - 1;
 let triple = (value) => value * 3;
 let half = (value) => {
   let final = value / 2;
@@ -147,7 +147,7 @@ let pipeline = [
 ];
 
 /*
-Using the pipeline variable that contains the collection of functions, taking the initial value 3 find the output.
+Using the pipeline variable that contains the collection of functions, taking the initial value 3 find the output.  
 
 NOTE: Initial value will be passed to first function the output of that function will be the input to next function.
 
@@ -160,8 +160,8 @@ EXAMPLE:
   ...
 */
 console.log(pipeline.reduce((acc, item) => {
-  console.log(`${item}, ${item(acc)}`);
-  return item(acc);
+  acc = item(acc);
+  return acc;
 }, 3)) // 13
 
 let pipeline2 = [
@@ -180,8 +180,7 @@ let pipeline2 = [
 
 // Find the output using pipeline2 the initial value if 8
 console.log(pipeline2.reduce((acc, item) => {
-  console.log(`${item}, ${item(acc)}`);
-  return item(acc);
+  acc = item(acc);
+  return acc;
 }, 8)) // 165
-
 
